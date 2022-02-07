@@ -1,0 +1,50 @@
+<div class = "my-3">
+    <!-- <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="onCheckBoxClick(todo)" 
+                [checked]="!todo.active">
+                <label class="form-check-label" for="exampleCheck1{{i}}">Done</label>
+            </td>
+            <td [ngClass]="{'strike':!todo.active}">{{todo.title}}</td>
+            <td [ngClass]="{'strike':!todo.active}">{{todo.desc}}</td>
+            <td> <button class = "btn btn-danger" (click)="onClick(todo)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>  -->
+
+
+    <!-- <h4 [ngClass]="{'strike':!todo.active}">{{todo.title}} </h4> 
+    <p [ngClass]="{'strike':!todo.active}">{{todo.desc}}</p> 
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="onCheckBoxClick(todo)" 
+        [checked]="!todo.active">
+        <label class="form-check-label" for="exampleCheck1{{i}}">Done</label>
+      </div>
+    <button class = "btn btn-danger" (click)="onClick(todo)">Delete</button>
+    <p></p> -->
+    <div class="card">
+      <div class="card-header" [ngClass]="{'strike':!todo.active}">{{todo.title}}
+      </div>
+      <div class="card-body">
+        <!-- <h5 class="card-title"></h5> -->
+        <p class="card-text"[ngClass]="{'strike':!todo.active}">{{todo.desc}}</p>
+        <p>
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="onCheckBoxClick(todo)" 
+                [checked]="!todo.active">
+                <label class="form-check-label" for="exampleCheck1{{i}}">Done</label>
+        </p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <button class = "btn btn-danger" (click)="onClick(todo)">Delete</button>
+      </div>
+    </div>
+</div>

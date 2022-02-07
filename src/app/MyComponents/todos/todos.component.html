@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class = "text-center"> Todo List United by mask</h1>
+</div>
+<app-add-todo (todoAdd)="addTodo($event)"> </app-add-todo>
+<h3>Your todos</h3>
+<!-- <div class = "my-3">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">delete</th>
+          </tr>
+        </thead>
+      </table> -->
+<div *ngIf="this.todos.length === 0; else elseBlock">No Todos to desplay</div>
+<ng-template #elseBlock>
+    <ul *ngFor="let todo of todos; index as i">
+        <app-todos-item [todo]="todo" [i]="i" (todoDelete)="deleteTodo($event)" (todoCheckBox)="toggleTodo($event)"> 
+        </app-todos-item>
+    </ul>
+</ng-template>
+
